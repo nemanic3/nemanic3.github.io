@@ -13,12 +13,16 @@
       <p class="profile__role">Backend Developer</p>
     </div>
     <div class="profile__contact" aria-label="빠른 연락처">
-      <a href="mailto:{{ site.email }}">
+      <a href="mailto:{{ site.email }}" title="Email">
         <span>Email</span>{{ site.email }}
       </a>
-      <a href="tel:{{ site.phone | remove: '-' }}">
+      <a href="tel:{{ site.phone | remove: '-' }}" title="Phone">
         <span>Phone</span>{{ site.phone }}
       </a>
+      <div class="profile__socials">
+        <a class="profile__social-link" href="{{ site.github_url }}" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="profile__social-link" href="{{ site.blog_url }}" target="_blank" rel="noreferrer">Blog ↗</a>
+      </div>
     </div>
   </div>
 
