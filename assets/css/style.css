@@ -772,15 +772,13 @@ a { color: inherit; }
   min-height: 7.5rem;
   padding: 1.5rem 0;
   align-items: center;
-  grid-template-columns: minmax(5rem, .35fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(5rem, 20%) minmax(0, 1fr) 10rem;
   gap: 2rem;
   border-bottom: 1px solid var(--line);
-  transition: background-color 180ms ease, padding-left 180ms ease;
+  transition: background-color 180ms ease;
 }
 
-.activity-list li:hover {
-  padding-left: .5rem;
-}
+.activity-list__type { text-align: right; }
 
 .activity-list__year, .activity-list__type {
   color: var(--muted);
