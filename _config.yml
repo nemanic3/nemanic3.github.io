@@ -1,5 +1,5 @@
 title: 신성현
-description: 꾸준히 고민하고 성장하는 백엔드 개발자 신성현의 포트폴리오
+description: 백엔드와 데이터 구조를 중심으로 사용자 화면부터 배포까지 연결하는 개발자 신성현의 포트폴리오
 lang: ko
 url: "https://nemanic3.github.io"
 baseurl: ""
@@ -7,10 +7,10 @@ baseurl: ""
 github_username: nemanic3
 github_url: "https://github.com/nemanic3"
 blog_url: "https://velog.io/@nemanic/posts"
-email: "shinsung2002@gmail.com"
-phone: "010-6787-4225"
+email: "nemanic2002@gmail.com"
+homepage_url: "https://nemanic.dev/"
 profile_image: "/assets/images/profile.jpg"
-asset_version: "20260803-2"
+asset_version: "20261012-1"
 
 exclude:
   - Gemfile

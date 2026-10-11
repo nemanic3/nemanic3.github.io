@@ -11,7 +11,7 @@ function setActiveSection(sectionId) {
       if (window.matchMedia("(max-width: 800px)").matches) {
         const nav = link.parentElement;
         const centeredPosition = link.offsetLeft - nav.clientWidth / 2 + link.clientWidth / 2;
-        nav.scrollTo({ left: centeredPosition, behavior: "smooth" });
+        nav.scrollTo({ left: centeredPosition, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
       }
     } else {
       link.removeAttribute("aria-current");

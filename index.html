@@ -1,302 +1,59 @@
 ---
 layout: default
-title: Portfolio
-description: 백엔드 개발자 신성현의 포트폴리오입니다.
+title: Backend Developer
+description: 백엔드와 데이터 구조를 중심으로 사용자 화면부터 배포까지 연결하는 개발자 신성현의 포트폴리오. 인턴십 리뉴얼, 팀 프로젝트와 서비스 운영 경험을 소개합니다.
 ---
-
 <section class="section hero" id="introduction" data-section>
   <div class="hero__content">
-    <p class="section-kicker">Introduction</p>
-    <h1>
-      <span class="hero__hello">안녕하세요.</span>
-      <span class="hero__statement">꾸준히 고민하고 성장하는</span>
-      <strong>백엔드 개발자 신성현입니다.</strong>
-    </h1>
-    <p class="hero__description">
-      단순히 기능을 구현하는 것에서 끝나지 않고, 왜 이렇게 동작하는지 이해하고
-      더 나은 구조를 고민하는 개발자가 되고자 합니다. 새로운 기술을 직접 적용하고
-      문제를 해결하는 과정을 좋아합니다.
-    </p>
-    <div class="hero__meta" aria-label="현재 소속">
-      <span>Hongik University</span>
-      <span>Computer Engineering</span>
-      <span>Seoul, Korea</span>
-    </div>
+    <p class="section-kicker">NEMANIC / Developer Portfolio</p>
+    <h1><span class="hero__statement">데이터와 사용 흐름을 연결하는</span><strong>백엔드 개발자<br>신성현입니다.</strong></h1>
+    <p class="hero__description">기존 시스템을 이해하고, 더 나은 구조로 개선합니다.<br>백엔드와 데이터 설계를 중심으로 사용자 화면부터 배포까지 연결하며, 구현한 서비스의 다음 개선을 찾습니다.</p>
+    <div class="hero__meta"><span>홍익대학교 컴퓨터공학과 · 21학번</span><span>API · 데이터 설계 · 서비스 운영</span></div>
+    <div class="hero-actions"><a class="button button--primary" href="#projects">프로젝트 살펴보기 <span aria-hidden="true">↓</span></a><a class="button" href="mailto:{{ site.email }}">채용·협업 문의 <span aria-hidden="true">↗</span></a></div>
+    <dl class="hero-highlights"><div><dt>실무 경험</dt><dd>오렌즈 스타비젼<br>백엔드 인턴</dd></div><div><dt>개발 경험</dt><dd>팀 리딩 · API 설계<br>데이터 보존과 이전</dd></div><div><dt>운영 경험</dt><dd>Cloudflare · Docker<br>서비스별 배포 구조</dd></div></dl>
   </div>
-  <a class="scroll-cue" href="#experience" aria-label="Experience 섹션으로 이동">
-    <span>Scroll to explore</span><span aria-hidden="true">↓</span>
-  </a>
+  <a class="scroll-cue" href="#experience">대표 경험부터 보기 <span aria-hidden="true">↓</span></a>
 </section>
 
 <section class="section" id="experience" data-section>
-  <header class="section-heading">
-    <p class="section-kicker">Experience</p>
-    <h2>배우고, 설계하고,<br>직접 만들어갑니다.</h2>
-  </header>
-
+  <header class="section-heading"><p class="section-kicker">Experience</p><h2>업무를 이해하고,<br>구현과 개선으로.</h2></header>
   <div class="timeline">
-    <article class="timeline__item">
-      <div class="timeline__marker" aria-hidden="true"></div>
-      <div class="timeline__period">
-        <time datetime="2026-07">2026.07</time><span>—</span><time datetime="2026-08">2026.08</time>
-      </div>
-      <div class="timeline__content">
-        <p class="timeline__company">STARVISION</p>
-        <h3>IT개발부 Backend Developer Intern</h3>
-        <p class="timeline__summary">
-          운영 중인 서비스를 이해하는 것부터 시작해 아카데미 지원 시스템의
-          새로운 구조를 설계하고 개발합니다.
-        </p>
-        <ul class="detail-list">
-          <li>기존 아카데미 지원 시스템 레거시 분석</li>
-          <li>서비스 운영 방식 및 데이터 구조 분석</li>
-          <li>아카데미 지원 시스템 리뉴얼 설계 및 개발</li>
-          <li>ERD, Use Case, Sequence Diagram 등 설계</li>
-          <li>GitLab 기반 개발 및 CI/CD 환경 구축 경험</li>
-        </ul>
-      </div>
+    <article class="timeline__item"><div class="timeline__marker" aria-hidden="true"></div><div class="timeline__period"><time datetime="2026-07">2026.07</time><span>—</span><time datetime="2026-08">08</time></div>
+      <div class="timeline__content"><p class="timeline__company">OLENS · STARVISION</p><h3>IT개발부 Backend Intern</h3><p class="timeline__summary">아카데미 지원 시스템을 분석하고 리뉴얼했습니다. 기존 지원 데이터와 업무 맥락을 유지하면서 지원자·관리자 기능을 설계하고 구현한 경험입니다.</p><ul class="detail-list"><li>레거시와 실제 운영 흐름 분석 → ERD·Use Case·Sequence Diagram으로 설계</li><li>지원서 작성부터 관리자 조회까지 이어지는 기능 구현</li><li>반복되는 데이터 처리와 로그인 후 복원 흐름 개선</li><li>GitLab 기반 개발 및 CI/CD 경험</li></ul><a class="project-card__link" href="#project-acre">AC:RE 담당 구현 보기 ↓</a></div>
     </article>
+    <article class="timeline__item"><div class="timeline__marker" aria-hidden="true"></div><div class="timeline__period">2025 · HICC</div><div class="timeline__content"><p class="timeline__company">TEAM PROJECTS</p><h3>팀 리딩과 백엔드 개발</h3><p class="timeline__summary">홍익대 졸업봇과 다독다독에서 팀 리딩과 API·데이터 구조 개발을 맡았습니다. 팀 개발 이후에도 기존 기능과 데이터를 보존하며 공개 배포와 유지보수를 이어갔습니다.</p><div class="experience-links"><a href="#project-hongikbot">홍익대 졸업봇 ↓</a><a href="#project-dadokdadok">다독다독 ↓</a></div></div></article>
   </div>
+  <details class="about-details"><summary>About · 조금 더 알아보기</summary><dl><div><dt>학업</dt><dd>홍익대학교 컴퓨터공학과 · 21학번</dd></div><div><dt>출생</dt><dd>2002년생</dd></div><div><dt>이력</dt><dd>하남풍산초등학교 · 덕풍중학교 · 하남고등학교 졸업</dd></div><div><dt>개인 브랜드</dt><dd><a href="{{ site.homepage_url }}" target="_blank" rel="noopener noreferrer">NEMANIC ↗</a> · 직접 만든 서비스와 개발 경험을 연결하는 홈페이지</dd></div></dl></details>
 </section>
 
 <section class="section" id="projects" data-section>
-  <header class="section-heading section-heading--split">
-    <div>
-      <p class="section-kicker">Projects</p>
-      <h2>문제를 발견하고<br>해결한 기록입니다.</h2>
-    </div>
-    <p>프로젝트의 구조와 과정에서 얻은 배움을 중요하게 생각합니다.</p>
-  </header>
-
-  <div class="project-grid">
-    <article class="project-card">
-      <div class="project-card__visual project-card__visual--acre" aria-hidden="true">
-        <span>Academy Renewal</span>
-        <strong>AC:RE</strong>
-        <small>Legacy to new structure</small>
-      </div>
-      <div class="project-card__body">
-        <div class="project-card__top">
-          <span class="project-card__number">01</span><span class="project-card__status">2026.07 — 08</span>
-        </div>
-        <div>
-          <h3>AC:RE</h3>
-          <p class="project-card__type">OLENS · STARVISION Legacy Renewal</p>
-          <p>오렌즈 스타비젼의 기존 아카데미 지원 시스템을 분석하고 새로운 구조로 리뉴얼하는 프로젝트입니다.</p>
-        </div>
-        <dl class="project-card__facts">
-          <div><dt>Role</dt><dd>Backend Intern · Legacy Analysis &amp; Renewal</dd></div>
-          <div><dt>Focus</dt><dd>데이터 구조 분석과 ERD·Use Case·Sequence Diagram 기반 설계</dd></div>
-        </dl>
-        <ul class="tag-list" aria-label="AC:RE 기술 및 주요 내용">
-          <li>Legacy System Analysis</li><li>Database Design</li><li>Next.js</li>
-          <li>MySQL</li><li>AWS</li><li>CI/CD</li>
-        </ul>
-        <a
-          class="project-card__link"
-          href="https://github.com/nemanic3/academy-renewal"
-          target="_blank"
-          rel="noreferrer"
-        >View on GitHub ↗</a>
-      </div>
-    </article>
-
-    <article class="project-card">
-      <div class="project-card__visual project-card__visual--flower project-card__visual--image">
-        <img
-          class="project-card__image"
-          src="{{ '/assets/images/projects/kkotdongnae.png' | relative_url }}?v={{ site.asset_version }}"
-          alt="꽃동네 프로젝트 로고"
-        >
-      </div>
-      <div class="project-card__body">
-        <div class="project-card__top">
-          <span class="project-card__number">02</span><span class="project-card__status">2026 Graduation Project</span>
-        </div>
-        <div>
-          <h3>꽃동네</h3>
-          <p class="project-card__type">Location-based Flower Marketplace</p>
-          <p>주변 꽃집의 스타일과 상품을 비교하고 원하는 꽃을 주문할 수 있는 지역 기반 꽃 판매 플랫폼입니다.</p>
-        </div>
-        <dl class="project-card__facts">
-          <div><dt>Role</dt><dd>Backend Developer</dd></div>
-          <div><dt>Focus</dt><dd>위치 기반 탐색·주문 구조 설계와 OpenAI API 기반 꽃 이미지 생성</dd></div>
-        </dl>
-        <ul class="tag-list" aria-label="꽃동네 주요 기능">
-          <li>Flutter</li><li>Django</li><li>PostgreSQL · PostGIS</li>
-          <li>Location-based Service</li><li>OpenAI API</li>
-        </ul>
-        <a
-          class="project-card__link"
-          href="https://github.com/DevITKR/kkotdongnae"
-          target="_blank"
-          rel="noreferrer"
-        >View on GitHub ↗</a>
-      </div>
-    </article>
-
-    <article class="project-card">
-      <div class="project-card__visual project-card__visual--graduation project-card__visual--image">
-        <img
-          class="project-card__image"
-          src="{{ '/assets/images/projects/hongik-graduation-bot.png' | relative_url }}?v={{ site.asset_version }}"
-          alt="홍익졸업봇 프로젝트 발표 이미지"
-        >
-      </div>
-      <div class="project-card__body">
-        <div class="project-card__top">
-          <span class="project-card__number">03</span>
-          <div class="project-card__badges">
-            <span class="project-card__badge project-card__badge--award">🏆 최우수상</span>
-            <span class="project-card__status">2025.07 — 08</span>
-          </div>
-        </div>
-        <div>
-          <h3>홍익졸업봇</h3>
-          <p class="project-card__type">Graduation Requirement Checker</p>
-          <p>성적표 한 장으로 이수 현황과 누락 과목을 분석하고 졸업요건 충족 여부를 확인하는 웹 서비스입니다.</p>
-        </div>
-        <dl class="project-card__facts">
-          <div><dt>Role</dt><dd>Team Lead · Backend Developer</dd></div>
-          <div><dt>Focus</dt><dd>OCR 기반 과목·학점 추출과 졸업요건 계산을 위한 API·DB 구조</dd></div>
-        </dl>
-        <ul class="tag-list" aria-label="홍익졸업봇 기술 및 성과">
-          <li>Django · DRF</li><li>PostgreSQL</li><li>Kakao OCR</li><li>React</li>
-        </ul>
-        <a
-          class="project-card__link"
-          href="https://github.com/HICC-2025-project-4team/team4"
-          target="_blank"
-          rel="noreferrer"
-        >View on GitHub ↗</a>
-      </div>
-    </article>
-
-    <article class="project-card">
-      <div class="project-card__visual project-card__visual--dadok project-card__visual--image">
-        <img
-          class="project-card__image"
-          src="{{ '/assets/images/projects/dadokdadok.png' | relative_url }}?v={{ site.asset_version }}"
-          alt="다독다독 프로젝트 로고"
-        >
-      </div>
-      <div class="project-card__body">
-        <div class="project-card__top">
-          <span class="project-card__number">04</span>
-          <div class="project-card__badges">
-            <span class="project-card__badge project-card__badge--award">🏆 우수상</span>
-            <span class="project-card__status">2025.01 — 02</span>
-          </div>
-        </div>
-        <div>
-          <h3>다독다독</h3>
-          <p class="project-card__type">HICC Club Project</p>
-          <p>독서 기록과 목표 관리, 도서 추천과 감상 공유를 하나의 흐름으로 연결한 웹 플랫폼입니다.</p>
-        </div>
-        <dl class="project-card__facts">
-          <div><dt>Role</dt><dd>Team Lead · Backend Developer</dd></div>
-          <div><dt>Focus</dt><dd>사용자 인증, 도서 검색·추천, 독서 기록·목표 관리 API</dd></div>
-        </dl>
-        <ul class="tag-list" aria-label="다독다독 기술 및 성과">
-          <li>Django</li><li>Python</li><li>React</li><li>Naver API</li>
-        </ul>
-        <a
-          class="project-card__link"
-          href="https://github.com/HICC-2024-2-project-contest/team1"
-          target="_blank"
-          rel="noreferrer"
-        >View on GitHub ↗</a>
-      </div>
-    </article>
-  </div>
+  <header class="section-heading section-heading--split"><div><p class="section-kicker">Selected Projects / 05</p><h2>문제와 선택,<br>그다음의 변화.</h2></div><p>최신 프로젝트부터 소개합니다.<br>번호는 처음 시작한 순서이며, 초기 개발과 최근 배포·유지보수는 구분했습니다.</p></header>
+  <nav class="project-index" aria-label="프로젝트 빠른 이동">{% for project in site.data.projects %}<a href="#project-{{ project.id }}"><span>{{ project.number }}</span>{{ project.name }}</a>{% endfor %}</nav>
+  <div class="project-grid">{% for project in site.data.projects %}{% include project.html project=project %}{% endfor %}</div>
 </section>
 
 <section class="section" id="skills" data-section>
-  <header class="section-heading section-heading--split">
-    <div>
-      <p class="section-kicker">Skills</p>
-      <h2>기술을 목적에 맞게<br>선택하고 활용합니다.</h2>
-    </div>
-    <p>익숙함의 정도보다 실제 문제에 어떻게 적용했는지를 이야기합니다.</p>
-  </header>
-
+  <header class="section-heading"><p class="section-kicker">Engineering & Operations</p><h2>서비스에 맞는 기술,<br>이어지는 운영.</h2></header>
   <div class="skill-grid">
-    <article class="skill-card">
-      <span class="skill-card__number">01</span>
-      <h3>Backend</h3>
-      <ul class="skill-list">
-        <li>Java · Spring Boot</li>
-        <li>Python · Django · DRF</li>
-        <li>Node.js · Next.js</li>
-      </ul>
-    </article>
-    <article class="skill-card">
-      <span class="skill-card__number">02</span>
-      <h3>Database</h3>
-      <ul class="skill-list">
-        <li>MySQL</li>
-        <li>PostgreSQL · PostGIS</li>
-      </ul>
-    </article>
-    <article class="skill-card">
-      <span class="skill-card__number">03</span>
-      <h3>Infra / DevOps</h3>
-      <ul class="skill-list">
-        <li>AWS</li>
-        <li>Git · GitLab</li>
-        <li>Jenkins · CI/CD</li>
-      </ul>
-    </article>
+    <article class="skill-card"><span class="skill-card__number">01 / APPLICATION</span><h3>API와 사용 흐름</h3><p>Django·DRF 인증과 권한 처리, 비동기 OCR, Next.js·TypeScript 기반 지원 시스템을 구현했습니다.</p><ul class="skill-list"><li>Python · Django · DRF</li><li>TypeScript · Next.js</li><li>JWT · Redis · Celery</li></ul></article>
+    <article class="skill-card"><span class="skill-card__number">02 / DATA</span><h3>데이터 구조와 보존</h3><p>기존·신규 데이터의 통합 조회와 원본 보존을 고려해 설계하고, DB 이전 전후의 기록과 관계를 확인했습니다.</p><ul class="skill-list"><li>MySQL · Prisma</li><li>PostgreSQL · SQLite</li><li>ERD · Migration · D1</li></ul></article>
+    <article class="skill-card"><span class="skill-card__number">03 / DELIVERY</span><h3>검사부터 공개 배포</h3><p>프로젝트별 실행 환경을 선택하고 GitHub 검사와 자동 배포, 공개 도메인과 API 진입점을 연결했습니다.</p><ul class="skill-list"><li>Cloudflare · Docker</li><li>GitHub Actions · GitLab</li><li>AWS · CI/CD</li></ul></article>
   </div>
+  <div class="operations-list">
+    <article><h3>정적 화면과 API의 연결</h3><p>Cloudflare 도메인·DNS·Pages로 공개 화면을 제공하고, Pages Functions를 API 진입점으로 구성했습니다.</p><span>꽃동네 · 홍익대 졸업봇 · 다독다독</span></article>
+    <article><h3>Django와 OCR 실행 환경</h3><p>Mac mini Docker와 Tunnel로 Django·DB를 연결하고, 졸업봇은 Redis·Celery·PaddleOCR 작업을 함께 실행합니다. 호스트와 네트워크 가용성에 의존합니다.</p><span>꽃동네 · 홍익대 졸업봇</span></article>
+    <article><h3>서비스별 저장·배포 선택</h3><p>다독다독은 Render Docker와 Neon PostgreSQL을 사용합니다. 개발 중인 Tutor Manager는 Workers·Static Assets·D1으로 구성합니다.</p><span>다독다독 · Tutor Manager</span></article>
+    <article><h3>보존하고 검증하며 변경</h3><p>데이터 이전·원본 보존, 인증·작성자 권한과 회귀 검증을 진행했습니다. 검증용 데이터와 실제 이용 실적을 구분하고, 재부팅 복구·정기 백업 등 남은 과제도 기록합니다.</p><span>프로젝트별 배포·검증 문서에 근거</span></article>
+  </div>
+  <details class="about-details"><summary>기존 학습·개발 경험</summary><p>Java · Spring Boot · Node.js · Jenkins 경험도 보유하고 있습니다. 위 기술 구성은 각 프로젝트의 현재 구현을 기준으로 정리했습니다.</p></details>
 </section>
 
-<section class="section" id="awards" data-section>
-  <header class="section-heading">
-    <p class="section-kicker">Awards &amp; Activities</p>
-    <h2>함께 만들며 얻은<br>경험과 성과입니다.</h2>
-  </header>
-
-  <ol class="activity-list">
-    <li>
-      <span class="activity-list__year">University</span>
-      <div><h3>HICC 활동</h3><p>홍익대학교 컴퓨터공학과 학술동아리 활동</p></div>
-      <span class="activity-list__type">Activity</span>
-    </li>
-    <li>
-      <span class="activity-list__year">HICC</span>
-      <div><h3>홍익졸업봇 최우수상</h3><p>학교 졸업요건 확인 프로젝트</p></div>
-      <span class="activity-list__type">Grand Prize</span>
-    </li>
-    <li>
-      <span class="activity-list__year">HICC</span>
-      <div><h3>다독다독 우수상</h3><p>HICC 활동 프로젝트</p></div>
-      <span class="activity-list__type">Excellence Award</span>
-    </li>
-    <li>
-      <span class="activity-list__year">2026</span>
-      <div><h3>스타비젼 IT개발부</h3><p>Backend Developer Intern</p></div>
-      <span class="activity-list__type">Experience</span>
-    </li>
-  </ol>
+<section class="section awards-section" id="awards" data-section>
+  <header class="section-heading"><p class="section-kicker">Awards & Activities</p><h2>함께 쌓은 경험.</h2></header>
+  <ol class="activity-list"><li><span class="activity-list__year">University</span><div><h3>HICC 활동</h3><p>홍익대학교 컴퓨터공학과 학술동아리</p></div><span class="activity-list__type">Activity</span></li><li><span class="activity-list__year">2025</span><div><h3>홍익대 졸업봇 최우수상</h3><p>성적표 기반 졸업 요건 확인 프로젝트</p></div><span class="activity-list__type">Grand Prize</span></li><li><span class="activity-list__year">2025</span><div><h3>다독다독 우수상</h3><p>HICC CLUB PROJECT</p></div><span class="activity-list__type">Excellence Award</span></li></ol>
 </section>
 
 <section class="section contact" id="contact" data-section>
-  <div>
-    <p class="section-kicker">Contact</p>
-    <h2>새로운 이야기와<br>기회를 기다립니다.</h2>
-  </div>
-  <div class="contact__links">
-    <a href="{{ site.github_url }}" target="_blank" rel="noreferrer">
-      <span><small>GitHub</small>github.com/nemanic3</span><span aria-hidden="true">↗</span>
-    </a>
-    <a href="{{ site.blog_url }}" target="_blank" rel="noreferrer">
-      <span><small>Blog</small>velog.io/@nemanic</span><span aria-hidden="true">↗</span>
-    </a>
-    <a href="mailto:{{ site.email }}">
-      <span><small>Email</small>{{ site.email }}</span><span aria-hidden="true">↗</span>
-    </a>
-    <a href="tel:{{ site.phone | remove: '-' }}">
-      <span><small>Phone</small>{{ site.phone }}</span><span aria-hidden="true">↗</span>
-    </a>
-  </div>
+  <div><p class="section-kicker">Contact</p><h2>함께 개선할 문제를<br>이야기해 주세요.</h2><p class="contact-description">채용과 협업 제안은 이메일로 연락해 주세요.</p></div>
+  <div class="contact__links"><a href="mailto:{{ site.email }}"><span><small>Email</small>{{ site.email }}</span><span aria-hidden="true">↗</span></a><a href="{{ site.homepage_url }}" target="_blank" rel="noopener noreferrer"><span><small>NEMANIC · 서비스 홈페이지</small>nemanic.dev</span><span aria-hidden="true">↗</span></a><a href="{{ site.github_url }}" target="_blank" rel="noopener noreferrer"><span><small>GitHub</small>github.com/nemanic3</span><span aria-hidden="true">↗</span></a><a href="{{ site.blog_url }}" target="_blank" rel="noopener noreferrer"><span><small>개발 기록</small>velog.io/@nemanic</span><span aria-hidden="true">↗</span></a></div>
 </section>

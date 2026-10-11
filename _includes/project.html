@@ -1,0 +1,40 @@
+{% assign project = include.project %}
+<article class="project-card" id="project-{{ project.id }}" aria-labelledby="title-{{ project.id }}">
+  <div class="project-card__media">
+    <div class="project-card__visual project-card__visual--{{ project.visual }}{% if project.image %} project-card__visual--image{% endif %}">
+      {% if project.image %}
+        <img class="project-card__image" src="{{ '/assets/images/projects/' | append: project.image | relative_url }}" alt="{{ project.image_alt }}" loading="lazy" width="1000" height="1000">
+      {% else %}
+        <span>{{ project.category }}</span><strong>{{ project.wordmark }}</strong><small>{{ project.name }}</small>
+      {% endif %}
+    </div>
+    {% if project.image_caption %}<p class="media-caption">{{ project.image_caption }}</p>{% endif %}
+  </div>
+  <div class="project-card__body">
+    <div class="project-card__top"><span>Project {{ project.number }}</span><span class="project-card__status">{{ project.period }}</span></div>
+    <header>
+      <h3 id="title-{{ project.id }}">{{ project.name }}</h3>
+      <p class="project-card__type">{{ project.category }}{% if project.award %} · {{ project.award }}{% endif %}</p>
+      <p class="project-description">{{ project.description }}</p>
+    </header>
+    <dl class="project-card__facts">
+      <div><dt>문제</dt><dd>{{ project.problem }}</dd></div>
+      <div><dt>{% if project.role %}담당 구현{% else %}개발 범위{% endif %}</dt><dd>{{ project.implementation }}</dd></div>
+    </dl>
+    <ul class="tag-list" aria-label="{{ project.name }} 현재 기술 구성">{% for tech in project.stack %}<li>{{ tech }}</li>{% endfor %}</ul>
+    <p class="project-state">{{ project.status }}</p>
+    <details class="project-records">
+      <summary>{{ project.name }} 구현·검증과 운영 기록</summary>
+      {% for record in project.records %}<div class="project-record"><h4>{{ record.label }}</h4><p>{{ record.text }}</p></div>{% endfor %}
+      {% if project.screenshot %}
+      <figure class="service-screen"><img src="{{ '/assets/images/projects/' | append: project.screenshot | relative_url }}" alt="{{ project.screenshot_alt }}" width="390" height="844" loading="lazy"><figcaption>{{ project.screenshot_caption }}</figcaption></figure>
+      {% endif %}
+      {% if project.verification %}<a class="evidence-link" href="{{ project.verification }}" target="_blank" rel="noopener noreferrer">배포·검증 문서 ↗<span class="sr-only"> (새 탭)</span></a>{% endif %}
+    </details>
+    <div class="project-actions" aria-label="{{ project.name }} 관련 링크">
+      <a class="project-card__link" href="{{ project.detail }}" target="_blank" rel="noopener noreferrer">프로젝트 상세 ↗<span class="sr-only"> (새 탭)</span></a>
+      <a class="project-card__link" href="{{ project.service }}" target="_blank" rel="noopener noreferrer">{{ project.service_label }} ↗<span class="sr-only"> (새 탭)</span></a>
+      {% if project.github %}<a class="project-card__link" href="{{ project.github }}" target="_blank" rel="noopener noreferrer">GitHub ↗<span class="sr-only"> (새 탭)</span></a>{% endif %}
+    </div>
+  </div>
+</article>

@@ -8,7 +8,7 @@
       {% endif %}
     </div>
     <div class="profile__text">
-      <p class="profile__eyebrow">Portfolio</p>
+      <p class="profile__eyebrow">NEMANIC / Portfolio</p>
       <p class="profile__name">신성현</p>
       <p class="profile__role">Backend Developer</p>
     </div>
@@ -16,11 +16,9 @@
       <a href="mailto:{{ site.email }}" title="Email">
         <span>Email</span>{{ site.email }}
       </a>
-      <a href="tel:{{ site.phone | remove: '-' }}" title="Phone">
-        <span>Phone</span>{{ site.phone }}
-      </a>
       <div class="profile__socials">
         <a class="profile__social-link" href="{{ site.github_url }}" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a class="profile__social-link" href="{{ site.homepage_url }}" target="_blank" rel="noreferrer">NEMANIC ↗</a>
         <a class="profile__social-link" href="{{ site.blog_url }}" target="_blank" rel="noreferrer">Blog ↗</a>
       </div>
     </div>
@@ -30,7 +28,7 @@
     <a class="section-nav__link is-active" href="{{ '/' | relative_url }}#introduction" aria-current="true"><span>01</span> Introduction</a>
     <a class="section-nav__link" href="{{ '/' | relative_url }}#experience"><span>02</span> Experience</a>
     <a class="section-nav__link" href="{{ '/' | relative_url }}#projects"><span>03</span> Projects</a>
-    <a class="section-nav__link" href="{{ '/' | relative_url }}#skills"><span>04</span> Skills</a>
+    <a class="section-nav__link" href="{{ '/' | relative_url }}#skills"><span>04</span> Engineering</a>
     <a class="section-nav__link" href="{{ '/' | relative_url }}#awards"><span>05</span> Awards</a>
     <a class="section-nav__link" href="{{ '/' | relative_url }}#contact"><span>06</span> Contact</a>
   </nav>
