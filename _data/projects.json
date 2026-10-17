@@ -1,75 +1,314 @@
 [
   {
-    "id": "tutor-manager", "number": "05", "name": "Tutor Manager", "period": "개발 중", "category": "학습 관리 서비스", "wordmark": "T / M", "visual": "tutor",
-    "description": "학생과 학부모 계정, 수업·숙제·시험·학습 기록과 공유를 연결하는 서비스입니다.",
-    "problem": "학생별로 흩어진 수업 정보와 학습 기록을 연결하고, 학부모에게 필요한 현황을 전달하는 흐름을 만들고 있습니다.",
-    "implementation": "학생·교재·수업 진도, 숙제 기한과 완료 여부, 시험 성적을 함께 다루는 구조를 개발 중입니다. 교사의 기록 관리와 학부모의 확인 흐름을 연결합니다.",
-    "stack": ["Expo · React Native · React", "TypeScript", "Workers · Static Assets · D1"],
+    "id": "moil",
+    "number": "08",
+    "name": "모일",
+    "period": "2026.10 첫 공개",
+    "category": "개인 프로젝트 · 돈 관리 웹서비스",
+    "role": "기획 · 프런트엔드·백엔드 개발",
+    "wordmark": "moil",
+    "visual": "moil",
+    "visual_label": "오늘의 기록, 앞으로의 잔액",
+    "description": "계좌와 현금, 받을 돈·낼 돈을 기록하고 앞으로의 예상 잔액을 확인하는 웹서비스입니다.",
+    "motivation": "20대 초반이나 대학생은 수입과 지출 시점이 일정하지 않을 수 있습니다. 고정 수입이 있든 없든 돈이 들어오고 나가는 흐름을 편하게 확인하도록 만들었습니다.",
+    "current": "여러 계좌·현금, 입출금·반복 일정, 완료·되돌리기와 예상 잔액을 관리합니다. 주식·외화도 직접 입력해 기록할 수 있습니다.",
+    "implementation": "기록 입력 화면부터 잔액 계산, 사용자별 저장까지 연결했습니다. 일정 완료와 되돌리기가 잔액에 반영되는 흐름을 구성하고 Next.js를 OpenNext로 Workers에 배포했습니다.",
+    "stack": [
+      "Next.js · React · TypeScript",
+      "OpenNext · Cloudflare Workers · D1"
+    ],
     "records": [
-      {"label": "현재 개발", "text": "Workers의 API와 Static Assets, D1을 사용하는 구성을 선택했습니다. 공개 상세 페이지에서 확인되는 학생·수업·학습 기록 및 공유 범위를 중심으로 개발하고 있습니다."},
-      {"label": "확인 범위", "text": "개발 주소를 공개한 상태이며 출시 완료를 의미하지 않습니다. 전체 기능의 운영 검증과 권한별 사용 흐름 확인은 계속 필요한 작업입니다."}
+      {
+        "label": "주요 구현",
+        "text": "예정된 입출금과 완료된 기록을 구분해 예상 잔액을 계산합니다. 반복 일정과 상태 변경을 다루고, 계산·타입·빌드 및 로컬 API 검사를 통해 변경을 확인하는 구조를 갖췄습니다."
+      },
+      {
+        "label": "운영과 공개 시점",
+        "text": "화면과 API는 Cloudflare Workers, 회원별 기록은 D1을 사용합니다. 2026.10은 첫 공개 시점이며 개발 기간을 뜻하지 않습니다. GitHub 검사는 자동 실행하고 운영 배포는 별도 명령으로 진행합니다."
+      },
+      {
+        "label": "다음 개선",
+        "text": "장기 기록이 쌓이는 상황에 맞춘 저장 구조와 계정·기록 삭제 안내를 보완할 계획입니다. 가입 전 체험 기록은 저장되지 않으며 새로고침하면 초기화됩니다."
+      }
+    ],
+    "status": "공개 서비스 · 은행·증권사 연결이나 실시간 시세 연동 없이 직접 입력합니다.",
+    "detail": "https://nemanic.dev/projects/moil/",
+    "service": "https://moil.nemanic.dev/",
+    "service_label": "모일 열기"
+  },
+  {
+    "id": "urisai",
+    "number": "07",
+    "name": "우리사이",
+    "category": "개인 프로젝트 · 비공개 커플 웹서비스",
+    "role": "기획 · 프런트엔드·백엔드 개발",
+    "wordmark": "우리사이",
+    "visual": "urisai",
+    "visual_label": "어디에 있어도, 서로의 오늘 곁에.",
+    "description": "각자의 Google 계정으로 로그인하고 초대 코드로 연결해, 두 사람만 위치와 현지 시간·짧은 안부를 나누는 웹서비스입니다.",
+    "motivation": "여자친구가 스페인으로 유학을 가게 되어 서로의 위치를 편하게 공유하려고 만들었습니다. 멀리 있어도 서로의 일상을 이해하는 작은 연결을 만들고자 했습니다.",
+    "current": "초대로 연결된 두 사람의 선택적 위치 공유, 마지막 공유 위치와 거리, 각자의 현지 시간, 안부 한 줄과 만나는 날 D-day를 제공합니다.",
+    "implementation": "Google 로그인과 초대 연결, 두 사람의 공유 공간을 구현했습니다. Leaflet 지도에 마지막으로 공유한 위치를 표시하고 시간·안부·만남 정보를 함께 볼 수 있도록 구성했습니다.",
+    "stack": [
+      "React · TypeScript · Vite",
+      "Cloudflare Workers · D1 · Leaflet"
+    ],
+    "records": [
+      {
+        "label": "사용 흐름과 운영",
+        "text": "누구나 가입할 수 있고 각 공간은 초대로 연결된 두 사람만 이용합니다. 웹에서 바로 사용하며 앱 설치는 필수가 아닙니다. Workers와 D1을 사용해 화면·API·공유 기록을 연결합니다."
+      },
+      {
+        "label": "공유의 기준",
+        "text": "위치는 원할 때 선택해 공유하며 마지막 공유 위치를 보여줍니다. 상시 실시간 추적이나 백그라운드 위치 추적 기능은 없습니다. 스페인은 개발 계기이며 이용 국가를 제한하는 조건이 아닙니다."
+      },
+      {
+        "label": "다음 개선",
+        "text": "위치 공유에서 출발해 두 사람의 일상을 연결하는 커플 앱으로 발전시키고자 합니다. 네이티브 앱 출시를 완료한 상태는 아닙니다."
+      }
+    ],
+    "status": "공개 웹서비스 · 위치 공유는 선택 사항이며 마지막으로 공유한 위치를 표시합니다.",
+    "detail": "https://nemanic.dev/projects/urisai/",
+    "service": "https://us.nemanic.dev/",
+    "service_label": "우리사이 열기"
+  },
+  {
+    "id": "runwhen",
+    "number": "06",
+    "name": "뛸때",
+    "category": "개인 프로젝트 · 러닝·산책 시간 추천",
+    "role": "기획 · 프런트엔드·추천 로직 개발",
+    "wordmark": "뛸때",
+    "visual": "runwhen",
+    "visual_label": "나갈 수 있는 시간, 더 괜찮은 날씨",
+    "description": "내가 나갈 수 있는 시간 안에서 날씨가 더 괜찮은 러닝·산책 시간대를 찾아주는 서비스입니다.",
+    "motivation": "날씨가 오락가락할 때 러닝 전 날씨와 컨디션을 함께 살피고 싶었습니다. 무리하지 않도록 출발 시간과 옷차림을 고르는 데 도움을 주고자 만들었습니다.",
+    "current": "오늘·내일 예보를 비교해 가능한 시간 안의 출발 시간대와 복장을 안내합니다. 운동 경험·오늘 강도·컨디션·날씨 선호를 비교 기준에 반영합니다.",
+    "implementation": "UI와 추천 규칙을 분리하고 기상청 예보 연결·캐시를 구성했습니다. 활동 시간 전체의 날씨를 비교하고 과거 시간·필수 값 누락·가능 시간을 넘는 후보를 제외하도록 구현했습니다.",
+    "stack": [
+      "React · TypeScript · Vite",
+      "Cloudflare Pages · Functions",
+      "KMA Forecast · Cache API · SunCalc"
+    ],
+    "records": [
+      {
+        "label": "최근 개선",
+        "text": "운동 목적은 계획 안내에, 경험·강도·컨디션과 비·바람 선호는 비교 기준에 반영했습니다. 지속적인 취향은 기기에 저장하고 오늘의 강도·컨디션은 다음 방문 때 기본값으로 시작합니다."
+      },
+      {
+        "label": "운영 구조",
+        "text": "Cloudflare Pages가 화면을 제공하고 Pages Functions가 기상청 예보를 조회합니다. 계정·DB 없이 설정은 브라우저에 저장합니다. 운영은 실제 예보를 사용하며 체험 예보는 별도로 표시합니다."
+      },
+      {
+        "label": "한계와 다음 개선",
+        "text": "추천과 복장 기준은 초기 제품 가설이며 의학적 분석이나 사고 예방 효과를 검증한 것은 아닙니다. 특보·미세먼지·노면 결빙·현장 조명은 미연동입니다. 사용량에 맞춘 요청 제한과 예보 API 쿼터 관찰을 보완할 계획입니다."
+      }
+    ],
+    "status": "공개 서비스 · 예보와 추천은 외출 판단을 돕는 참고 정보이며 현장 상황을 보장하지 않습니다.",
+    "detail": "https://nemanic.dev/projects/runwhen/",
+    "service": "https://run.nemanic.dev/",
+    "service_label": "뛸때 열기",
+    "guide": "https://nemanic.dev/projects/runwhen/guide/"
+  },
+  {
+    "id": "tutor-manager",
+    "number": "05",
+    "name": "Tutor Manager",
+    "period": "개발 중",
+    "category": "개인 프로젝트 · 학습 관리 서비스",
+    "wordmark": "T / M",
+    "visual": "tutor",
+    "description": "학생과 학부모 계정, 수업·숙제·시험·학습 기록과 공유를 연결하는 서비스입니다.",
+    "implementation": "수업 기록 화면과 Workers API·D1 저장 구조를 연결했습니다. 역할과 학생 연결에 따라 조회 범위를 나누고, 개인 메모를 공유 응답에서 제외하는 흐름을 구현했습니다.",
+    "stack": [
+      "Expo · React Native · TypeScript",
+      "Workers · Static Assets · D1"
+    ],
+    "records": [
+      {
+        "label": "구현과 운영",
+        "text": "웹 화면과 API는 Workers, 서버 기록은 D1을 사용합니다. 여러 기기에서 수정할 때 최신 기록을 덮어쓰지 않도록 변경 충돌을 확인하는 구조를 적용했습니다."
+      },
+      {
+        "label": "개발 중인 서비스",
+        "text": "공개 주소가 있지만 전체 기능의 출시 완료를 의미하지 않습니다. 학생·학부모별 권한과 공유 범위를 계속 점검하고, 실제 모바일 기기 사용성 및 인증 흐름을 보완할 계획입니다. 네이티브 앱의 서버 로그인은 아직 연결하지 않았습니다."
+      }
     ],
     "status": "개발 중 · 기능과 화면은 변경될 수 있습니다.",
-    "detail": "https://nemanic.dev/projects/tutor-manager/", "service": "https://tutor.nemanic.dev", "service_label": "개발 중인 서비스"
+    "detail": "https://nemanic.dev/projects/tutor-manager/",
+    "service": "https://tutor.nemanic.dev",
+    "service_label": "개발 중인 서비스",
+    "role": "기획 · 웹·서버 개발",
+    "motivation": "직접 과외하며 학생별 기록을 관리하고 학생·학부모와 소통할 도구가 필요했습니다. 과외하는 친구들도 함께 사용할 수 있는 도구를 만들고자 했습니다.",
+    "current_label": "개발 범위",
+    "current": "학생·수업·숙제·시험 기록과 학부모 공유를 개발하고 있습니다. 웹에서는 연결된 학생의 학습 현황과 공유 코멘트를 확인하는 흐름을 구성했습니다."
   },
   {
-    "id": "acre", "number": "04", "name": "AC:RE", "period": "2026.07–08", "category": "오렌즈 스타비젼 · 백엔드 인턴", "role": "Backend Intern · Legacy Analysis & Renewal", "wordmark": "AC:RE", "visual": "acre",
+    "id": "acre",
+    "number": "04",
+    "name": "AC:RE",
+    "period": "2026.07–08",
+    "category": "오렌즈 스타비젼 · 인턴십 프로젝트",
+    "role": "Backend Intern",
+    "wordmark": "AC:RE",
+    "visual": "acre",
     "description": "기존 데이터와 지원 경험을 이어가는 아카데미 지원 시스템 리뉴얼 프로젝트입니다.",
-    "problem": "기존 업무와 지원자 데이터를 보존하면서, 새 지원서 구조와 관리자 운영 흐름을 함께 개선해야 했습니다.",
-    "implementation": "레거시 분석과 데이터 설계, 지원서 작성·임시저장·제출, 기존·신규 지원자 통합 조회를 담당했습니다. 검색·필터·정렬·페이지 처리, 모집 관리와 문서 다운로드를 구현했습니다.",
-    "stack": ["Next.js · TypeScript", "Prisma · MySQL", "AWS · CI/CD"],
+    "implementation": "레거시 분석과 데이터 설계, 지원자·관리자 기능을 담당했습니다. 반복 조회·저장과 불필요한 요청을 줄이고 로그인 이후 작성 내용 복원 흐름을 보완했습니다.",
+    "stack": [
+      "Next.js · TypeScript",
+      "Prisma · MySQL",
+      "AWS · CI/CD"
+    ],
     "records": [
-      {"label": "설계와 구현", "text": "기존 데이터는 보존하고 기본 정보·학력·답변·동의·첨부를 구조화했습니다. ERD·Use Case·Sequence Diagram과 ADR로 설계와 의사결정을 정리했습니다."},
-      {"label": "개선한 흐름", "text": "통합·정렬·페이지 범위 처리를 DB에서 수행하고 반복 저장, 중복 조회와 불필요한 API 요청을 줄였습니다. 로그인 이후 작성 내용을 복원하는 흐름도 보완했습니다."},
-      {"label": "결과와 근거", "text": "지원자·관리자 기능과 조회·저장 흐름 개선 내용은 NEMANIC의 공개 소개 범위로 정리했습니다. 측정된 성능 수치나 정식 운영 전환 완료는 공개 근거가 없어 주장하지 않습니다."}
+      {
+        "label": "주요 의사결정",
+        "text": "기존 데이터를 보존하며 새 지원서 구조와 통합 조회를 설계했습니다. ERD·Use Case·Sequence Diagram과 ADR로 설계와 판단을 기록하고, GitLab 기반 개발과 CI/CD를 경험했습니다."
+      },
+      {
+        "label": "개선한 흐름",
+        "text": "통합·정렬·페이지 범위 처리를 DB에서 수행하고, 지원서 저장과 화면 요청의 중복을 줄였습니다. 공개된 구현 경험을 중심으로 소개하며 정량 성과는 산정하지 않았습니다."
+      },
+      {
+        "label": "공개 상태와 후속 과제",
+        "text": "리뉴얼 개발 주소를 공개합니다. 실제 운영 전환 여부는 확인되지 않았으며, 운영 적용 후의 안정성과 성능은 추가 확인이 필요한 범위입니다."
+      }
     ],
     "status": "인턴십 리뉴얼 프로젝트 · 공개 가능한 구현 경험과 리뉴얼 주소만 안내합니다.",
-    "detail": "https://nemanic.dev/projects/acre/", "service": "https://academy-renewal-dev.o-lens.com/", "service_label": "리뉴얼 사이트"
+    "detail": "https://nemanic.dev/projects/acre/",
+    "service": "https://academy-renewal-dev.o-lens.com/",
+    "service_label": "리뉴얼 사이트",
+    "motivation": "기존 아카데미 지원 시스템을 대체하는 리뉴얼에 참여했습니다. 기존 지원 경험과 데이터를 이어가면서 운영과 유지보수가 쉬운 구조를 만드는 데 초점을 맞췄습니다.",
+    "current": "지원서 작성·임시저장·제출, 기존·신규 지원자 통합 조회, 검색·필터·정렬·페이지 처리와 모집 관리·문서 다운로드를 구현했습니다."
   },
   {
-    "id": "kkotdongnae", "number": "03", "name": "꽃동네", "period": "2026 · 졸업 프로젝트", "category": "졸업 프로젝트 · Backend Developer", "role": "Backend Developer", "image": "kkotdongnae.png", "image_alt": "꽃동네 기존 로고: 분홍색 꽃과 연두색 위치 핀", "visual": "flower",
+    "id": "kkotdongnae",
+    "number": "03",
+    "name": "꽃동네",
+    "period": "2026 · 졸업 프로젝트",
+    "category": "졸업 프로젝트",
+    "role": "Backend Developer",
+    "image": "kkotdongnae.png",
+    "image_alt": "꽃동네 기존 로고: 분홍색 꽃과 연두색 위치 핀",
+    "visual": "flower",
     "description": "주변 꽃집을 찾고, 관심 매장을 저장하고, 텍스트 리뷰를 남기는 위치 기반 꽃집 탐색 웹 서비스입니다.",
-    "problem": "기존 Flutter 화면을 실제 API와 연결하고, 매장 탐색부터 사용자별 기록 저장까지 이어지는 흐름이 필요했습니다.",
-    "implementation": "Django API와 Flutter UI를 연결하고 좌표·반경 기반 주변 꽃집 조회, 네이버 지도 검색 연결, 사용자별 즐겨찾기와 텍스트 리뷰의 PostgreSQL 저장을 구성했습니다.",
-    "stack": ["Flutter · Dart", "Django · DRF · JWT", "PostgreSQL", "Pages · Functions · Tunnel", "Mac mini · Docker"],
-    "records": [
-      {"label": "최근 배포·개선", "text": "2026년 졸업 프로젝트 개발과 별도로, 최근 공개 배포에서 인증·접근 권한·좌표 입력을 보완하고 원본 DB를 보존한 운영 복사본을 구성했습니다. GitHub 검사와 자동 배포를 연결했습니다."},
-      {"label": "검증한 범위", "text": "배포 문서 기준 공개 도메인에서 검증용 계정의 인증·프로필·로그아웃을 확인했습니다. 매장·즐겨찾기·리뷰 저장은 격리 QA의 가상 데이터로 검증했으며 실제 고객 이용 실적을 의미하지 않습니다."},
-      {"label": "현재 제한", "text": "운영 매장 등록이 남아 있습니다. 주문·장바구니·피드·채팅 화면은 데모이며, 백엔드의 상품·예약·판매자·주문 API와 Flutter 전체 주문 흐름은 연동 미완료입니다. 실제 결제·사진 리뷰 업로드·실시간 채팅은 제공하지 않습니다."},
-      {"label": "향후 확장", "text": "주문 흐름, OpenAI 꽃 이미지 생성과 PostGIS는 기존 기획의 확장 항목입니다. 현재 운영 기능이나 기술 구성에는 포함하지 않습니다."}
+    "implementation": "Flutter UI와 Django API를 연결했습니다. 좌표·반경 기반 매장 조회와 사용자별 기록 저장, 인증·접근 권한 처리를 구성하고 PostgreSQL에 연결했습니다.",
+    "stack": [
+      "Flutter · Dart · Riverpod · GoRouter · Dio",
+      "Django · DRF · JWT",
+      "PostgreSQL 16",
+      "Pages · Functions · Tunnel",
+      "Mac mini · Docker"
     ],
-    "screenshot": "kkotdongnae-login.jpg", "screenshot_alt": "꽃동네 공개 로그인 화면: 초록 꽃 아이콘과 빈 로그인 입력란", "screenshot_caption": "실제 서비스 화면 · 로그인 전 공개 화면. 비밀번호 재설정은 현재 지원하지 않습니다.",
-    "status": "공개 배포 · API·DB는 Mac mini, Docker와 Tunnel 실행에 의존합니다. 실제 재부팅 복구는 미검증입니다.",
-    "detail": "https://nemanic.dev/projects/kkotdongnae/", "service": "https://kkotdongnae.nemanic.dev", "service_label": "서비스 보기", "github": "https://github.com/nemanic3/kkotdongnae", "verification": "https://github.com/nemanic3/kkotdongnae/blob/main/docs/DEPLOYMENT.md"
+    "records": [
+      {
+        "label": "최근 배포·개선",
+        "text": "2026년 졸업 프로젝트 개발과 별도로, 최근 공개 배포에서 인증·접근 권한·좌표 입력을 보완했습니다. 원본 DB를 보존한 운영 복사본을 구성하고 GitHub 검사와 자동 배포를 연결했습니다."
+      },
+      {
+        "label": "운영과 확인 범위",
+        "text": "Flutter 화면과 API 진입점은 Cloudflare Pages·Functions, Django와 PostgreSQL은 Mac mini Docker에서 실행하며 Tunnel로 연결합니다. 공개 인증 흐름과 격리 QA의 가상 매장·리뷰 저장을 점검한 기록이 있으며 실제 고객 이용 실적과 구분합니다."
+      },
+      {
+        "label": "다음 개선",
+        "text": "운영 매장 등록과 주문 흐름 연동, 호스트 재부팅 복구 점검이 남아 있습니다. 사진 리뷰 업로드·실시간 채팅은 미제공이며, OpenAI 꽃 이미지 생성과 PostGIS는 향후 확장 기획입니다."
+      }
+    ],
+    "screenshot": "kkotdongnae-login.jpg",
+    "screenshot_alt": "꽃동네 공개 로그인 화면: 초록 꽃 아이콘과 빈 로그인 입력란",
+    "screenshot_caption": "실제 서비스 화면 · 로그인 전 공개 화면. 비밀번호 재설정은 현재 지원하지 않습니다.",
+    "status": "공개 배포 · 운영 매장 등록이 남아 있습니다. 피드·채팅·주문·장바구니 화면은 데모이며 실제 주문·결제는 미연동입니다.",
+    "detail": "https://nemanic.dev/projects/kkotdongnae/",
+    "service": "https://kkotdongnae.nemanic.dev",
+    "service_label": "서비스 보기",
+    "motivation": "온라인 플랫폼에 익숙하지 않은 지역 소상공인과 꽃을 고르기 어려워하는 사람을 연결하고 싶었습니다. 동네 꽃집을 쉽게 찾는 경험부터 구현했습니다.",
+    "current": "사용자 인증, 꽃집 검색·상세 조회와 좌표 기반 주변 탐색, 네이버 지도 검색 연결, 사용자별 즐겨찾기와 텍스트 리뷰를 제공합니다."
   },
   {
-    "id": "hongikbot", "number": "02", "name": "홍익대 졸업봇", "period": "2025.07–08", "category": "Team Lead · Backend Developer", "role": "Team Lead · Backend Developer", "award": "최우수상", "image": "hongik-landing.jpg", "image_alt": "홍익졸업봇 공개 첫 화면: 로고와 캐릭터, 회원가입·로그인 버튼", "visual": "graduation",
+    "id": "hongikbot",
+    "number": "02",
+    "name": "홍익대 졸업봇",
+    "period": "2025.07–08",
+    "category": "팀 프로젝트",
+    "role": "Team Lead · Backend Developer",
+    "award": "최우수상",
+    "image": "hongik-landing.jpg",
+    "image_alt": "홍익졸업봇 공개 첫 화면: 로고와 캐릭터, 회원가입·로그인 버튼",
+    "visual": "graduation",
     "description": "성적표의 과목 정보를 추출하고, 직접 확인한 기록으로 졸업 요건 이수 현황을 살펴보는 웹 서비스입니다.",
-    "problem": "복잡한 졸업 요건과 개인 이수 기록을 함께 확인하는 부담을 줄이되, OCR 인식 오류를 사용자가 바로잡을 수 있어야 했습니다.",
-    "implementation": "팀 리딩과 백엔드 개발을 맡아 과목·학점 추출과 졸업 요건 계산을 위한 API·DB 구조를 설계했습니다. 현재 흐름은 업로드 → OCR/PDF 텍스트 추출 → 원본 대조·수정 → 기록 확정 → 졸업 요건 보고서입니다.",
-    "stack": ["Next.js · React · TypeScript", "Django REST Framework · PostgreSQL", "Redis · Celery · PaddleOCR", "Pages · Functions · Tunnel", "Mac mini · Docker"],
+    "implementation": "팀 리딩과 백엔드 개발을 맡아 과목·학점 추출과 요건 계산을 위한 API·DB를 설계했습니다. 최근에는 OCR 초안과 확정 기록을 분리하고 사용자가 오류를 바로잡는 흐름을 연결했습니다.",
+    "stack": [
+      "Next.js · React · TypeScript",
+      "Django · DRF · PostgreSQL",
+      "Redis · Celery",
+      "PaddleOCR · PaddlePaddle",
+      "Pages · Functions · Tunnel",
+      "Mac mini · Docker"
+    ],
     "records": [
-      {"label": "최근 배포·개선", "text": "2025.07–08 초기 개발 이후 공개 배포에서 비동기 OCR와 원본 대조·수정·확정 흐름을 연결했습니다. API와 OCR 작업은 Mac mini Docker에서 실행하며 GitHub 검사와 연동한 자동 배포를 구성했습니다."},
-      {"label": "검증한 범위", "text": "배포 검증 문서 기준 가짜 한국어 이미지·텍스트 PDF로 업로드부터 OCR, 원본 미리보기, 수정·확정·보고서까지 확인했습니다. 계정별 접근 제한도 검증했으며 실제 성적표나 개인정보를 검증 자료로 사용하지 않았습니다."},
-      {"label": "남은 과제", "text": "졸업 기준의 출처 검증과 운영 복구 절차 점검이 필요합니다. Mac mini·Docker·네트워크·Tunnel이 실행 중이어야 백엔드를 이용할 수 있습니다."}
+      {
+        "label": "초기 개발과 최근 개선",
+        "text": "2025.07–08 팀 개발 이후 공개 배포에서 비동기 OCR와 원본 대조·수정·확정 흐름을 보완했습니다. OCR 결과를 곧바로 확정 기록으로 사용하지 않고 사용자 검토 단계를 두었습니다."
+      },
+      {
+        "label": "실행 구조",
+        "text": "Cloudflare Pages·Functions·Tunnel을 거쳐 Mac mini Docker의 Django API로 연결합니다. Redis·Celery가 작업을 분리하고 PaddleOCR·PaddlePaddle이 호스트에서 문서를 처리합니다."
+      },
+      {
+        "label": "확인 범위와 다음 개선",
+        "text": "배포 문서는 가상 한국어 이미지·텍스트 PDF로 전체 처리 흐름과 계정별 접근 제한을 점검한 기록을 담고 있습니다. 졸업 기준의 출처 검증, 원본 보관 정책과 백업·복구 절차는 후속 과제입니다."
+      }
     ],
     "image_caption": "실제 서비스 화면 · 로그인 전 공개 첫 화면",
     "status": "공개 배포 · 학교 공식 서비스나 공식 졸업 판정이 아닙니다. 졸업 기준은 출처 검증이 필요한 초안이며, 최종 확인은 학교에 문의해야 합니다.",
-    "detail": "https://nemanic.dev/projects/hongik-graduation-bot/", "service": "https://hongikbot.nemanic.dev/", "service_label": "서비스 보기", "github": "https://github.com/nemanic3/HONGIK_BOT", "verification": "https://github.com/nemanic3/HONGIK_BOT/blob/master/docs/CLOUDFLARE_VERIFICATION.md"
+    "detail": "https://nemanic.dev/projects/hongik-graduation-bot/",
+    "service": "https://hongikbot.nemanic.dev/",
+    "service_label": "서비스 보기",
+    "motivation": "수강신청 때마다 졸업 요건을 다시 찾아보고, 신입생도 주변에 물어봐야 하는 번거로움을 줄이고 싶었습니다. 개인 이수 기록과 졸업 요건을 함께 확인하도록 구성했습니다.",
+    "current": "성적표 업로드 → OCR·PDF 텍스트 추출 → 원본 대조·수정 → 기록 확정 → 졸업 요건 보고서 순서로 이용합니다."
   },
   {
-    "id": "dadokdadok", "number": "01", "name": "다독다독", "period": "2025.01–02", "category": "HICC CLUB PROJECT · Team Lead · Backend Developer", "role": "Team Lead · Backend Developer", "award": "우수상", "image": "dadokdadok.png", "image_alt": "흰 배경의 기존 다독다독 노란색 로고", "visual": "dadok",
+    "id": "dadokdadok",
+    "number": "01",
+    "name": "다독다독",
+    "period": "2025.01–02",
+    "category": "HICC CLUB PROJECT",
+    "role": "Team Lead · Backend Developer",
+    "award": "우수상",
+    "image": "dadokdadok.png",
+    "image_alt": "흰 배경의 기존 다독다독 노란색 로고",
+    "visual": "dadok",
     "description": "책 검색부터 독서 기록·목표 관리·감상 공유까지 연결하는 독서 웹 서비스입니다.",
-    "problem": "책을 찾고 감상을 기록하는 과정과 독서 목표를 한 서비스에서 연결하고, 사용자별 기록을 안전하게 관리하고자 했습니다.",
-    "implementation": "팀 리딩과 백엔드 개발을 맡아 사용자 인증, 도서 검색·추천, 독서 기록·목표 관리 API를 개발했습니다. 추천은 검색 기반 연관 도서와 기존 리뷰·평점을 활용하는 방식입니다.",
-    "stack": ["HTML · CSS · Vanilla JavaScript", "Django · DRF · JWT", "Neon PostgreSQL", "Pages · Functions · Render Docker", "Kakao Daum API · Resend"],
+    "implementation": "팀 리딩과 백엔드 개발을 맡아 사용자 인증, 도서 검색·추천, 독서 기록·목표 관리 API를 개발했습니다. 추천은 검색 연관 도서와 기존 리뷰·평점을 활용합니다.",
+    "stack": [
+      "HTML · CSS · Vanilla JavaScript",
+      "Django · DRF · JWT",
+      "Neon PostgreSQL",
+      "Pages · Functions · Render Docker",
+      "Kakao Daum API · Resend"
+    ],
     "records": [
-      {"label": "최근 배포·개선", "text": "2025.01–02 원래 개발 이후 기존 UI를 유지하며 공개 배포했습니다. SQLite 원본을 보존한 채 PostgreSQL로 데이터를 이전했고, 운영 책 검색은 카카오 Daum API로 전환했습니다. 인증·작성자 권한·입력 처리와 회귀 테스트를 보완했습니다."},
-      {"label": "결과와 검증", "text": "배포 문서에서 DB 이전 전후의 기록·관계 보존 확인, SQLite와 PostgreSQL 회귀 테스트, 공개 API의 인증·검색·리뷰·서재·목표 흐름 검증을 확인할 수 있습니다. 검증용 계정은 실제 사용자 실적으로 소개하지 않습니다."},
-      {"label": "통계의 기준", "text": "목표 진행률과 월별 통계는 리뷰 기록일을 기준으로 집계합니다. 실제 완독일이나 재독 횟수를 추적하는 기능이 아니며, 추천을 AI·머신러닝으로 설명하지 않습니다."},
-      {"label": "남은 과제", "text": "Render 무료 서버는 휴면 후 첫 API 요청이 느릴 수 있습니다. Resend 계정 복구 메일의 실제 수신 확인과 정기 DB 백업·복구 절차는 후속 운영 작업입니다."}
+      {
+        "label": "최근 배포·개선",
+        "text": "2025.01–02 원래 개발 이후 기존 UI를 유지하며 공개 배포했습니다. SQLite 원본을 보존한 채 PostgreSQL로 데이터를 이전했고, 운영 책 검색은 카카오 Daum API로 전환했습니다. 인증·작성자 권한·입력 처리와 회귀 테스트를 보완했습니다."
+      },
+      {
+        "label": "결과와 검증",
+        "text": "배포 문서에서 DB 이전 전후의 기록·관계 보존 확인, SQLite와 PostgreSQL 회귀 테스트, 공개 API의 인증·검색·리뷰·서재·목표 흐름 검증을 확인할 수 있습니다. 검증용 계정은 실제 사용자 실적으로 소개하지 않습니다."
+      },
+      {
+        "label": "통계의 기준",
+        "text": "목표 진행률과 월별 통계는 리뷰 기록일을 기준으로 집계합니다. 실제 완독일이나 재독 횟수를 추적하는 기능이 아니며, 추천을 AI·머신러닝으로 설명하지 않습니다."
+      },
+      {
+        "label": "남은 과제",
+        "text": "Render 무료 서버는 휴면 후 첫 API 요청이 느릴 수 있습니다. Resend 계정 복구 메일의 실제 수신 확인과 정기 DB 백업·복구 절차는 후속 운영 작업입니다."
+      }
     ],
     "status": "공개 배포 · 프런트엔드와 API 진입점은 Cloudflare, Django는 Render, DB는 Neon에서 운영합니다.",
-    "detail": "https://nemanic.dev/projects/dadokdadok/", "service": "https://dadok.nemanic.dev", "service_label": "서비스 보기", "github": "https://github.com/nemanic3/dadokdadok", "verification": "https://github.com/nemanic3/dadokdadok/blob/master/docs/cloudflare-deployment.md"
+    "detail": "https://nemanic.dev/projects/dadokdadok/",
+    "service": "https://dadok.nemanic.dev",
+    "service_label": "서비스 보기",
+    "motivation": "책을 많이 읽던 시기에 읽은 내용을 기록하고 다른 사람들과 감상을 공유하면 좋겠다고 생각했습니다. 책을 찾는 과정부터 기록과 대화까지 한곳에 연결하고자 했습니다.",
+    "current": "도서 검색, 리뷰·평점, 내 서재, 댓글·좋아요, 독서 목표·통계와 간단한 추천을 제공합니다. 통계는 리뷰 기록일을 기준으로 집계합니다."
   }
 ]
