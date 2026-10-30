@@ -222,6 +222,35 @@
   #portfolio-editorial-preview .pe-intro{font-size:15px;margin-top:24px}
   #portfolio-editorial-preview .pe-social{font-size:12px;overflow-wrap:anywhere}
 }
+/* Keep screenshots generous while making the engineering story readable. */
+#portfolio-editorial-preview .pe-project{padding-top:52px;padding-bottom:54px}
+#portfolio-editorial-preview .pe-gallery{width:100%;max-width:900px;margin:0 auto}
+#portfolio-editorial-preview .pe-project-body{gap:30px}
+#portfolio-editorial-preview .pe-copy{width:100%;max-width:none}
+#portfolio-editorial-preview .pe-summary{font-size:28px;line-height:1.5}
+#portfolio-editorial-preview .pe-service-description{font-size:17px;line-height:1.85;margin-top:12px;word-break:keep-all}
+#portfolio-editorial-preview .pe-role{font-size:13px;line-height:1.8;margin-top:14px}
+#portfolio-editorial-preview .pe-story-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:28px}
+#portfolio-editorial-preview .pe-story-block h4,#portfolio-editorial-preview .pe-engineering>h4{font-size:16px;font-weight:650;line-height:1.5;margin:0 0 10px}
+#portfolio-editorial-preview .pe-story-block h4:not(:first-child){margin-top:24px}
+#portfolio-editorial-preview .pe-story-block p{font-size:15px;line-height:1.9;word-break:keep-all}
+#portfolio-editorial-preview .pe-tech{display:block;font-size:13px;line-height:1.9;margin-top:0}
+#portfolio-editorial-preview .pe-tech span{display:block}
+#portfolio-editorial-preview .pe-engineering{border-top:1px solid #e7e7e7;margin-top:30px;padding-top:24px}
+#portfolio-editorial-preview .pe-record-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 36px;margin-top:16px}
+#portfolio-editorial-preview .pe-record h5{font-size:14px;line-height:1.6;font-weight:650;margin:0 0 6px}
+#portfolio-editorial-preview .pe-record p{font-size:14px;line-height:1.9;word-break:keep-all}
+#portfolio-editorial-preview .pe-project-status{font-size:12px;line-height:1.8;margin-top:24px;word-break:keep-all}
+#portfolio-editorial-preview .pe-project-links{margin-top:18px}
+@media(max-width:700px){
+  #portfolio-editorial-preview .pe-project{padding-top:36px;padding-bottom:38px}
+  #portfolio-editorial-preview .pe-project-body{gap:24px}
+  #portfolio-editorial-preview .pe-summary{font-size:23px}
+  #portfolio-editorial-preview .pe-service-description{font-size:15px}
+  #portfolio-editorial-preview .pe-story-grid,#portfolio-editorial-preview .pe-record-grid{grid-template-columns:1fr;gap:24px}
+  #portfolio-editorial-preview .pe-story-block p{font-size:14px}
+  #portfolio-editorial-preview .pe-record p{font-size:14px}
+}
 </style>
 <script>
 (()=>{
@@ -250,7 +279,21 @@ try{restore(window.openai?.widgetState);}catch(error){/* Host state is optional.
 const list=root.querySelector('.pe-projects');
 function persist(){const host=window.openai;if(!host||typeof host.setWidgetState!=='function')return;try{const result=host.setWidgetState({modelContent:{galleryRevision:'floating-dock-v5',category:state.category,expanded:state.expanded,selectedScreens:{...state.slides}},privateContent:{large:{...state.large}}});if(result&&typeof result.catch==='function')result.catch(()=>{});}catch(error){/* State persistence is optional; local controls remain usable. */}}
 function gallery(p){const items=screens[p.id]||[];const ix=Number.isInteger(state.slides[p.id])&&state.slides[p.id]>=0&&state.slides[p.id]<items.length?state.slides[p.id]:0;const item=items[ix];return `<figure class="pe-gallery" aria-label="${esc(p.name)} 실제 서비스 화면"><div class="pe-image-surface">${item?`<div class="pe-image-crop" data-image-width="${item.width}" data-image-height="${item.height}" data-crop-right="${item.cropRight||0}" style="--image-scale:${item.width/(item.width-(item.cropRight||0))};width:${Math.min(100,100*((item.width-(item.cropRight||0))/item.height)/(16/9))}%;height:${Math.min(100,100*(16/9)/((item.width-(item.cropRight||0))/item.height))}%"><img src="${item.src}" alt="${esc(p.name+' · '+item.label)}"></div>`:`<div class="pe-image-empty"><strong>AC:RE</strong>프로젝트 화면을 불러오는 중입니다.</div>`}</div><figcaption class="pe-gallery-bottom"><span class="pe-caption">${item?esc(item.label):'화면 자료 준비 중'}</span>${items.length>1?`<span class="pe-controls"><button type="button" data-slide="prev" data-id="${p.id}" aria-label="${esc(p.name)} 이전 화면">←</button><span class="pe-counter">${ix+1} / ${items.length}</span><button type="button" data-slide="next" data-id="${p.id}" aria-label="${esc(p.name)} 다음 화면">→</button></span>`:''}</figcaption></figure>`;}
-function article(p,i){if(p.id==='nemanic')return `<article class="pe-project pe-brand-address" id="pe-nemanic" data-spy data-project="nemanic"><div class="pe-project-top"><h3>NEMANIC</h3><span class="pe-project-number">01 / ${projects.length}</span></div><a class="pe-address" href="https://nemanic.dev/" target="_blank" rel="noopener noreferrer">nemanic.dev ↗</a><p class="pe-brand-description">직접 만든 서비스와 프로젝트를 소개하고, 실제 서비스로 연결하는 개인 브랜드 웹사이트입니다.</p></article>`;return `<article id="pe-${p.id}" data-spy class="pe-project${state.large[p.id]?' is-expanded':''}" data-project="${p.id}"><div class="pe-project-top"><button class="pe-category cursor-interaction" type="button" data-filter="${type(p)}" aria-pressed="${state.category===type(p)}" aria-label="${labels[type(p)]}만 보기">#${labels[type(p)]}</button><span class="pe-project-number">${String(i+1).padStart(2,'0')} / ${projects.length}</span></div><h3>${esc(p.name)}</h3><div class="pe-hashtags" aria-label="프로젝트 주제">${topical[p.id].split(" ").map(tag=>`<span>${esc(tag)}</span>`).join("")}</div><div class="pe-project-body">${gallery(p)}<div class="pe-copy"><p class="pe-summary">${esc(subtitles[p.id])}</p><p class="pe-role">${esc(p.role)}${p.period?' · '+esc(p.period):''}</p><p class="pe-description">${esc(p.implementation)}</p><div class="pe-tech">${p.stack.map(s=>`<span>${esc(s)}</span>`).join('')}</div><div class="pe-project-links"><a href="${esc(p.service)}" target="_blank" rel="noopener noreferrer">서비스 열기 ↗</a><a href="${esc(p.detail)}" target="_blank" rel="noopener noreferrer">개발 기록 ↗</a></div><details ${state.print?'open':''}><summary>기획 배경 · 운영 기록</summary><p>${esc(p.motivation)}</p>${p.records.map(r=>`<p><strong>${esc(r.label)}</strong><br>${esc(r.text)}</p>`).join('')}<p>${esc(p.status)}</p></details></div></div></article>`;}
+function article(p,i){if(p.id==='nemanic')return `<article class="pe-project pe-brand-address" id="pe-nemanic" data-spy data-project="nemanic"><div class="pe-project-top"><h3>NEMANIC</h3><span class="pe-project-number">01 / ${projects.length}</span></div><a class="pe-address" href="https://nemanic.dev/" target="_blank" rel="noopener noreferrer">nemanic.dev ↗</a><p class="pe-brand-description">직접 만든 서비스와 프로젝트를 소개하고, 실제 서비스로 연결하는 개인 브랜드 웹사이트입니다.</p></article>`;return `<article id="pe-${p.id}" data-spy class="pe-project${state.large[p.id]?' is-expanded':''}" data-project="${p.id}"><div class="pe-project-top"><button class="pe-category cursor-interaction" type="button" data-filter="${type(p)}" aria-pressed="${state.category===type(p)}" aria-label="${labels[type(p)]}만 보기">#${labels[type(p)]}</button><span class="pe-project-number">${String(i+1).padStart(2,'0')} / ${projects.length}</span></div><h3>${esc(p.name)}</h3><div class="pe-hashtags" aria-label="프로젝트 주제">${topical[p.id].split(" ").map(tag=>`<span>${esc(tag)}</span>`).join("")}</div><div class="pe-project-body">${gallery(p)}${projectCopy(p)}</div></article>`;}
+function projectCopy(p){
+  return `<div class="pe-copy">
+    <p class="pe-summary">${esc(subtitles[p.id])}</p>
+    <p class="pe-service-description">${esc(p.description)}</p>
+    <p class="pe-role">${esc(p.role)}${p.period?' · '+esc(p.period):''}</p>
+    <div class="pe-story-grid">
+      <div class="pe-story-block"><h4>만든 이유</h4><p>${esc(p.motivation)}</p><h4>주요 기능</h4><p>${esc(p.current)}</p></div>
+      <div class="pe-story-block"><h4>담당 구현</h4><p>${esc(p.implementation)}</p><h4>사용 기술</h4><div class="pe-tech">${p.stack.map(s=>`<span>${esc(s)}</span>`).join('')}</div></div>
+    </div>
+    <div class="pe-engineering"><h4>설계 · 개선 · 운영 기록</h4><div class="pe-record-grid">${p.records.map(r=>`<div class="pe-record"><h5>${esc(r.label)}</h5><p>${esc(r.text)}</p></div>`).join('')}</div></div>
+    <p class="pe-project-status">${esc(p.status)}</p>
+    <div class="pe-project-links"><a href="${esc(p.service)}" target="_blank" rel="noopener noreferrer">서비스 열기 ↗</a><a href="${esc(p.detail)}" target="_blank" rel="noopener noreferrer">개발 기록 ↗</a></div>
+  </div>`;
+}
 const scrollWindow=document.scrollingElement||document.documentElement;
 const rail=root.querySelector('.pe-rail');
 let scrollTick=false;
